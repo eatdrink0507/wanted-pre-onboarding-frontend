@@ -8,16 +8,15 @@ export const Post = ({
   navigate,
 }) => {
   axios
-    .post("https://www.pre-onboarding-selection-task.shop/auth/signin", {
-      email: email,
-      password: password,
-    })
+    .post(
+      "https://www.pre-onboarding-selection-task.shop/auth/signup",
+
+      { email: email, password: password }
+    )
     .then((res) => {
-      localStorage.setItem("log-token", res.data.access_token);
-      navigate("/todo");
+      navigate("/signin");
     })
     .catch((error) => {
-      console.log(error.response.data);
       setMessage(error.response.data.message);
       setModalopen(true);
     });
