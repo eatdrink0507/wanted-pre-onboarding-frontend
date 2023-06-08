@@ -28,7 +28,7 @@ export const SignUp = () => {
         type="button"
         disabled={!email.includes("@") || password.length < 8}
         data-testid="signup-button"
-        onClick={(e) =>
+        onClick={() =>
           Post({ email, password, setMessage, setModalopen, navigate })
         }
       >

@@ -12,7 +12,6 @@ export default function SignIn() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(localStorage.getItem("log-token"));
     if (localStorage.getItem("log-token")) navigate("/todo");
   }, []);
   return (
@@ -32,7 +31,7 @@ export default function SignIn() {
         type="button"
         disabled={!email.includes("@") || password.length < 8}
         data-testid="signin-button"
-        onClick={(e) =>
+        onClick={() =>
           Post({ email, password, setMessage, setModalopen, navigate })
         }
       >
