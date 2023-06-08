@@ -13,7 +13,7 @@ export const Post = ({
 
       { email: email, password: password }
     )
-    .then((res) => {
+    .then(() => {
       navigate("/signin");
     })
     .catch((error) => {
