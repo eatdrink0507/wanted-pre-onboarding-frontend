@@ -16,11 +16,11 @@ export default function api(method, body, setData, id) {
       "Content-Type": "application/json",
     },
     data: {
-      todo: body,
+      ...body,
     },
   })
     .then((res) => {
-      if (method === "get") setData(res.data);
+      if (method === "get") setData([...res.data]);
     })
     .catch((error) => console.log(error, body));
 }
