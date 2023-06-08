@@ -5,7 +5,6 @@ import { Modal } from "../Modal";
 export const SignUp = () => {
   const navigate = useNavigate();
   useEffect(() => {
-    console.log(localStorage.getItem("log-token"));
     if (localStorage.getItem("log-token")) navigate("/todo");
   }, []);
   const [email, setEmail] = useState("");
@@ -13,12 +12,14 @@ export const SignUp = () => {
   const [message, setMessage] = useState("");
   const [modalopen, setModalopen] = useState(false);
   return (
-    <>
+    <div className="signbox">
       <div>회원가입 페이지</div>
+      <span>이메일</span>
       <input
         data-testid="email-input"
         onChange={(e) => setEmail(e.target.value)}
       ></input>
+      비밀번호
       <input
         data-testid="password-input"
         onChange={(e) => setPassword(e.target.value)}
@@ -36,8 +37,7 @@ export const SignUp = () => {
       <div>
         이메일 주소는 @를 포함해야 합니다. 비밀번호는 8자리 이상이어야 합니다.
       </div>
-      <button onClick={(e) => setModalopen(!modalopen)}></button>
       <Modal open={modalopen} message={message} toclose={setModalopen} />
-    </>
+    </div>
   );
 };

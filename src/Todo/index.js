@@ -12,7 +12,7 @@ export const Todo = () => {
     api("get", null, setData, null);
 
     if (!localStorage.getItem("log-token")) navigate("/signin");
-  }, [navigate]);
+  }, []);
 
   return (
     <div>

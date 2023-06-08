@@ -16,12 +16,14 @@ export default function SignIn() {
     if (localStorage.getItem("log-token")) navigate("/todo");
   }, []);
   return (
-    <>
-      <div>로그인ㅇ 페이지</div>
+    <div className="signbox">
+      <div className="signbox">로그인 페이지</div>
+      <span>이메일</span>
       <input
         data-testid="email-input"
         onChange={(e) => setEmail(e.target.value)}
       ></input>
+      <span>비밀번호</span>
       <input
         data-testid="password-input"
         onChange={(e) => setPassword(e.target.value)}
@@ -36,9 +38,8 @@ export default function SignIn() {
       >
         로그인
       </button>
-      <button onClick={(e) => navigate("/todo")}></button>
 
       <Modal open={modalopen} message={message} toclose={setModalopen} />
-    </>
+    </div>
   );
 }
