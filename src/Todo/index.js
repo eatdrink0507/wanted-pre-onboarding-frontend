@@ -15,8 +15,8 @@ export const Todo = () => {
   }, []);
 
   return (
-    <div>
-      <h1>this is todo</h1>
+    <div className="todobox">
+      <h1>TODO LIST</h1>
 
       <div>
         <input

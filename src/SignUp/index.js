@@ -13,7 +13,7 @@ export const SignUp = () => {
   const [modalopen, setModalopen] = useState(false);
   return (
     <div className="signbox">
-      <div>회원가입 페이지</div>
+      <h1>회원가입 페이지</h1>
       <span>이메일</span>
       <input
         data-testid="email-input"

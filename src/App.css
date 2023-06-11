@@ -1,15 +1,26 @@
 .App {
   text-align: center;
 }
-input {
-  width: 200px;
-}
 
 .signbox {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 50px 0;
+}
+
+.todobox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+main {
+  align-items: center;
 }
 
 .App-header {

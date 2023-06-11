@@ -16,7 +16,7 @@ export default function SignIn() {
   }, []);
   return (
     <div className="signbox">
-      <div className="signbox">로그인 페이지</div>
+      <h1>로그인 페이지</h1>
       <span>이메일</span>
       <input
         data-testid="email-input"
