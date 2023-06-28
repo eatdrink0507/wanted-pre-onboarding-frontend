@@ -60,17 +60,20 @@ https://strong-semolina-be0ec6.netlify.app/
 
 1. 회원가입, 로그인 때 이미 존재하는 아이디 / 비밀번호가 틀렸을 경우 등등의 상황을 알리기 위해 과제 요구사항은 아니었으나 modal창을 만들어서 api 의 에러 메시지가 팝업되도록 했습니다.
 
-   ```
+```
    <div>
     <Modal open={modalopen} message={message} toclose={setModalopen} />
    </div>
- ```
+```
 
 2. api 호출 함수
 로그인, 회원가입 api 요청/응답이 성공할 경우 다른 페이지로 이동하도록 처리.
 이미 존재하는 아이디이거나 비번이 틀렸을 경우 에러 메세지 반환하도록 처리.
+
 Example)
+
 SignUp / Post.js
+
 ```
 export const Post = ({
   email,
@@ -95,4 +98,32 @@ export const Post = ({
 };
 ```
 
+3. Todo 페이지
+
+Todo 페이지는
+
+<input />
+<button />
+{data.map => <ListComponent /> }
+
+구조.
+
+ListComponent는 todo 목록을 보여주는 동시에 사용자가 버튼을 누르면 input창이 나타나야 하기 때문에
+isEdit 이라는 state 선언
+isEdit이 true일때 <span>{todo}</span>
+isEdit이 false일때 <input />
+으로 조건부렌더링
+
+또한, 수정이나 삭제, 추가가 일어날 때마다 페이지가 갱신되도록 button의 onclick 설정
+예를 들어 삭제버튼은
+```
+<button
+ onClick={() =>
+  api("delete", null, null, e.id)
+  .then(() => api("get", "", setData, null)
+)
+}>
+     삭제
+</button>
+```
 
