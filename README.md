@@ -50,7 +50,9 @@ https://strong-semolina-be0ec6.netlify.app/
  # 라이브러리 사용 이유
  
  React Router => 라우팅 처리
+ 
  Axios => api 호출 후 promise 처리를 자동으로 해주기 때문에 사용
+ 
  Styled-Components => 없어도 문제는 없으나 컴포넌트 별로 스타일 관리가 편해짐
 
  
