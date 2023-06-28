@@ -55,4 +55,44 @@ https://strong-semolina-be0ec6.netlify.app/
  
  Styled-Components => 없어도 문제는 없으나 컴포넌트 별로 스타일 관리가 편해짐
 
- 
+
+# 페이지 로직 분리
+
+1. 회원가입, 로그인 때 이미 존재하는 아이디 / 비밀번호가 틀렸을 경우 등등의 상황을 알리기 위해 과제 요구사항은 아니었으나 modal창을 만들어서 api 의 에러 메시지가 팝업되도록 했습니다.
+
+   ```
+   <div>
+    <Modal open={modalopen} message={message} toclose={setModalopen} />
+   </div>
+ ```
+
+2. api 호출 함수
+로그인, 회원가입 api 요청/응답이 성공할 경우 다른 페이지로 이동하도록 처리.
+이미 존재하는 아이디이거나 비번이 틀렸을 경우 에러 메세지 반환하도록 처리.
+Example)
+SignUp / Post.js
+```
+export const Post = ({
+  email,
+  password,
+  setMessage,
+  setModalopen,
+  navigate,
+}) => {
+  axios
+    .post(
+      "https://www.pre-onboarding-selection-task.shop/auth/signup",
+
+      { email: email, password: password }
+    )
+    .then(() => {
+      navigate("/signin");
+    })
+    .catch((error) => {
+      setMessage(error.response.data.message);
+      setModalopen(true);
+    });
+};
+```
+
+
