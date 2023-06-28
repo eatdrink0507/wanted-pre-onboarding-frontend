@@ -104,7 +104,7 @@ Todo 페이지는
 
 <input />
 <button />
-{data.map => <ListComponent /> }
+{data.map => < ListComponent /> }
 
 구조.
 
